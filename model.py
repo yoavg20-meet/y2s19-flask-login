@@ -8,10 +8,11 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = "users"
+    fav_food = Column(String)
     id = Column(Integer, primary_key=True)
-    #what else does a user account need?
+    username = Column(String)
     password_hash = Column(String)
-
+    fav_food = Column(String)
     def hash_password(self, password):
         self.password_hash = pwd_security.encrypt(password)
     def verify_password(self, password):
