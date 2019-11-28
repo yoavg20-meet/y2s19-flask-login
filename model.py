@@ -17,3 +17,15 @@ class User(Base):
         self.password_hash = pwd_security.encrypt(password)
     def verify_password(self, password):
         return pwd_security.verify(password, self.password_hash)
+
+Base = declarative_base()
+
+class Product(Base):
+   __tablename__ = 'product'
+   id = Column(Integer, primary_key=True)
+   price = Column(Float)
+   name = Column(String)
+   picture_link = Column(String)
+   description = Column(String)
+
+

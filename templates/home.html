@@ -1,10 +1,12 @@
+<title>momo the king</title>
 <h1>
 Login form WITH session!
 </h1>
+<a href="/s"> store </a>
 
 {%if session['logged_in']%}
 Hi {{session['name']}}, you are logged in.
-{%endif%}
+{%endif%}python app
 
 <form action="/login" method="POST">
   <input type="username" name="username" placeholder="Username">
